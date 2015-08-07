@@ -1,0 +1,39 @@
+{
+    "name": "nek-v/yii2-console-app",
+    "description": "Yii2 console app template",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "nek",
+            "email": "nek@srez.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "^2.0",
+        "phois/whois": "dev-master"
+    },
+    "config": {
+        "process-timeout": 1800
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "yii\\composer\\Installer::postCreateProject"
+        ]
+    },
+    "extra": {
+        "yii\\composer\\Installer::postCreateProject": {
+            "setPermission": [
+                {
+                    "runtime": "0777",
+                    "yii": "0755"
+                }
+            ]
+        },
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
+}
