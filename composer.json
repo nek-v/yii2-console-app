@@ -11,8 +11,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "yiisoft/yii2": "^2.0",
-        "phois/whois": "dev-master"
+        "yiisoft/yii2": "^2.0"
     },
     "config": {
         "process-timeout": 1800
