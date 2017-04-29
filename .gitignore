@@ -44,5 +44,5 @@ phpunit.phar
 .env
 
 # Yii specific
-/runtime/*
-!/runtime/.gitignore
+runtime/*
+!runtime/.gitignore
