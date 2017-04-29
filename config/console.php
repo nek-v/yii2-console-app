@@ -8,6 +8,7 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'app\commands',
+    'enableCoreCommands'  => false,
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -19,6 +20,9 @@ return [
                     'levels' => ['error', 'warning'],
                 ],
             ],
+        ],
+        'schedule' => [
+            'class' => 'omnilight\scheduling\Schedule'
         ],
         'db' => $db,
     ],

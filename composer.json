@@ -11,7 +11,8 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "yiisoft/yii2": "^2.0"
+        "yiisoft/yii2": "^2.0",
+        "omnilight/yii2-scheduling": "^1.0"
     },
     "config": {
         "process-timeout": 1800
