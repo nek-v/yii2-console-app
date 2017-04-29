@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="yii2-console-app" basedir="." default="build">
+    
+    <tstamp />
+    
+    <!-- ============== -->
+    <!-- Target: clean  -->
+    <!-- ============== -->
+    <target name="clean">
+        <delete includeemptydirs="true">
+            <fileset dir=".">
+                <include name="composer.phar" />
+            </fileset>
+            <fileset dir="runtime" includes="**">
+                <exclude name=".gitignore"/>
+            </fileset>
+            <fileset dir="vendor" defaultexcludes="false" />     
+        </delete>
+    </target>
+    
+    <!-- ================= -->
+    <!-- Target: composer  -->
+    <!-- ================= -->
+    <target name="composer">
+        <echo>Install composer</echo>
+        <exec executable="php" passthru="true" checkreturn="true">
+            <arg value="-r" />
+            <arg value="readfile('https://getcomposer.org/installer');" />
+            <arg value="|" />
+            <arg value="php" />
+        </exec>
+        <chmod file="composer.phar" mode="664" />
+    </target>
+    
+    <!-- =============== -->
+    <!-- Target: vendor  -->
+    <!-- =============== -->
+    <target name="vendor">
+        <echo>Install vendor</echo>
+        <exec executable="php" passthru="true" checkreturn="true">
+            <arg value="composer.phar" />
+            <arg value="install" />
+        </exec>
+    </target>
+    
+    <!-- ============== -->
+    <!-- Target: build  -->
+    <!-- ============== -->
+    <target name="build">
+        <phingcall target="clean" />
+        <phingcall target="composer" />
+        <phingcall target="vendor" />
+    </target>
+    
+    <!-- =============== -->
+    <!-- Target: deploy  -->
+    <!-- =============== -->
+    <target name="deploy" depends="build"/>
+    
+</project>
