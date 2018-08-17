@@ -15,11 +15,18 @@
         "omnilight/yii2-scheduling": "^1.0"
     },
     "config": {
-        "process-timeout": 1800
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "enabled": false
+        }
     },
     "scripts": {
         "post-create-project-cmd": [
             "yii\\composer\\Installer::postCreateProject"
+        ],
+        "post-create-project-cmd": [
+            "yii\\composer\\Installer::postCreateProject",
+            "yii\\composer\\Installer::postInstall"
         ]
     },
     "extra": {
