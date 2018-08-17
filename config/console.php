@@ -3,7 +3,7 @@
 $params = require(__DIR__ . '/params.php');
 $db = require(__DIR__ . '/db.php');
 
-return [
+$config = [
     'id' => 'yii2-console-app',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
@@ -28,3 +28,5 @@ return [
     ],
     'params' => $params,
 ];
+
+return $config;
